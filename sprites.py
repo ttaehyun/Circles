@@ -11,9 +11,14 @@ class Player1(pg.sprite.Sprite):
         self.image.fill(YELLOW)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH/2, HEIGHT/2)
-        self.pos = vec(WIDTH/2, HEIGHT/2)
+        self.pos = vec(WIDTH/2-200, HEIGHT/2-200)
         self.vel = vec(0, 0)
         self.acc = vec(0, 0)
+
+    def jump_cut(self):
+        if self.jumping:
+            if self.vel.y < -3:
+                self.vel.y = -3
 
     def jump(self):
         # jump only if standing on a platform
@@ -23,46 +28,15 @@ class Player1(pg.sprite.Sprite):
         if hits:
             self.vel.y = -20
 
-    # def move_l(self):
-    #     #키보드 a입력시 왼쪽이동
-    #     self.acc = vec(0, PLAYER_GRAVITY)
-    #
-    #     self.acc.x = -PLAYER_ACC
-    #     self.acc.x += self.vel.x * PLAYER_FRICTION
-    #     self.vel += self.acc
-    #     self.pos += self.vel + 0.5 * self.acc
-    #
-    #     if self.pos.x > WIDTH:
-    #         self.pos.x = WIDTH
-    #     if self.pos.x < 0:
-    #         self.pos.x = 0
-    #
-    #     self.rect.midbottom = self.pos
-    # def move_r(self):
-    #     #키보드 d입력시 오른쪽이동
-    #     self.acc = vec(0, PLAYER_GRAVITY)
-    #     self.acc.x = PLAYER_ACC
-    #     self.acc.x += self.vel.x * PLAYER_FRICTION
-    #     self.vel += self.acc
-    #     self.pos += self.vel + 0.5 * self.acc
-    #
-    #     if self.pos.x > WIDTH:
-    #         self.pos.x = WIDTH
-    #     if self.pos.x < 0:
-    #         self.pos.x = 0
-    #
-    #     self.rect.midbottom = self.pos
     def update(self):
         self.acc = vec(0, PLAYER_GRAVITY)
         keys = pg.key.get_pressed()
-        if keys[pg.K_a]:                #키보드 a입력시 왼쪽이동
+
+        if keys[pg.K_a]:
             self.acc.x = -PLAYER_ACC
-        # elif keys[pg.K_LEFT]:
-        #     self.acc.x = -PLAYER_ACC
-        if keys[pg.K_d]:                #키보드 d입력시 오른쪽이동
+
+        if keys[pg.K_d]:
             self.acc.x = PLAYER_ACC
-        # elif keys[pg.K_RIGHT]:
-        #     self.acc.x = PLAYER_ACC
 
         self.acc.x += self.vel.x*PLAYER_FRICTION
         self.vel += self.acc
@@ -83,9 +57,14 @@ class Player2(pg.sprite.Sprite):
         self.image.fill(BLUE)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH/2, HEIGHT/2)
-        self.pos = vec(WIDTH/2, HEIGHT/2)
+        self.pos = vec(WIDTH/2+200, HEIGHT/2+100)
         self.vel = vec(0, 0)
         self.acc = vec(0, 0)
+
+    def jump_cut(self):
+        if self.jumping:
+            if self.vel.y < -3:
+                self.vel.y = -3
 
     def jump(self):
         # jump only if standing on a platform
@@ -95,44 +74,13 @@ class Player2(pg.sprite.Sprite):
         if hits:
             self.vel.y = -20
 
-    # def move_l(self):
-    #     #키보드 a입력시 왼쪽이동
-    #     self.acc = vec(0, PLAYER_GRAVITY)
-    #
-    #     self.acc.x = -PLAYER_ACC
-    #     self.acc.x += self.vel.x * PLAYER_FRICTION
-    #     self.vel += self.acc
-    #     self.pos += self.vel + 0.5 * self.acc
-    #
-    #     if self.pos.x > WIDTH:
-    #         self.pos.x = WIDTH
-    #     if self.pos.x < 0:
-    #         self.pos.x = 0
-    #
-    #     self.rect.midbottom = self.pos
-    # def move_r(self):
-    #     #키보드 d입력시 오른쪽이동
-    #     self.acc = vec(0, PLAYER_GRAVITY)
-    #     self.acc.x = PLAYER_ACC
-    #     self.acc.x += self.vel.x * PLAYER_FRICTION
-    #     self.vel += self.acc
-    #     self.pos += self.vel + 0.5 * self.acc
-    #
-    #     if self.pos.x > WIDTH:
-    #         self.pos.x = WIDTH
-    #     if self.pos.x < 0:
-    #         self.pos.x = 0
-    #
-    #     self.rect.midbottom = self.pos
     def update(self):
         self.acc = vec(0, PLAYER_GRAVITY)
         keys = pg.key.get_pressed()
-        # if keys[pg.K_a]:                #키보드 a입력시 왼쪽이동
-        #     self.acc.x = -PLAYER_ACC
+
         if keys[pg.K_LEFT]:
             self.acc.x = -PLAYER_ACC
-        # if keys[pg.K_d]:                #키보드 d입력시 오른쪽이동
-        #     self.acc.x = PLAYER_ACC
+
         if keys[pg.K_RIGHT]:
             self.acc.x = PLAYER_ACC
 
