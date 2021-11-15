@@ -97,7 +97,7 @@ class Game:
             self.playing = False
 
        #Spawn new platforms
-        while len(self.platforms) < 6:
+        while len(self.platforms) < 10:
             width = random.randrange(50, 100)
             p = Platform(random.randrange(0, WIDTH - width),
                          random.randrange(-75, -30),
