@@ -1,8 +1,6 @@
-import pygame as pg
 import random
-from setting import *
 from sprites import *
-from os import path
+
 
 class Game:
     def __init__(self):
@@ -63,6 +61,7 @@ class Game:
             print("1")
             if self.player1.rect.top <= HEIGHT/4:
                 self.player1.pos.y += max(abs(self.player1.vel.y), 5)
+                self.player2.pos.y += max(abs(self.player2.vel.y), 10)
                 for plat in self.platforms:
                     plat.rect.y += max(abs(self.player1.vel.y), 5)
                     if plat.rect.top >= HEIGHT:
@@ -71,6 +70,7 @@ class Game:
             print("2")
             if self.player2.rect.top <= HEIGHT/4:
                 self.player2.pos.y += max(abs(self.player2.vel.y), 5)
+                self.player1.pos.y += max(abs(self.player2.vel.y), 10)
                 for plat in self.platforms:
                     plat.rect.y += max(abs(self.player2.vel.y), 5)
                     if plat.rect.top >= HEIGHT:
