@@ -135,8 +135,9 @@ class Game:
         # game splash/start screen
         self.screen.fill(BGCOLOR)
         self.draw_text(TITLE, 48, WHITE, WIDTH / 2, HEIGHT / 4)
-        self.draw_text("Arrows to move, Space to jump",
+        self.draw_text("1P : w, a, d, 2P : <- ^ ->",
                        22, WHITE, WIDTH / 2, HEIGHT / 2)
+        self.draw_text("Space to jump",22,WHITE,WIDTH/2,HEIGHT/2 +25)
         self.draw_text("Press a key to play",
                        22, WHITE, WIDTH / 2, HEIGHT * 3 / 4)
         pg.display.flip()

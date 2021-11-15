@@ -1,6 +1,6 @@
 
 # game options/settings
-TITLE = "TEST"
+TITLE = "JUMP!"
 WIDTH = 1280
 HEIGHT = 720
 FPS = 60
