@@ -98,8 +98,8 @@ class Game:
 
        #Spawn new platforms
         while len(self.platforms) < 10:
-            width = random.randrange(50, 100)
-            p = Platform(random.randrange(0, WIDTH - width),
+            width = random.randrange(50, 200)
+            p = Platform(random.randrange(200, WIDTH - width),
                          random.randrange(-75, -30),
                          width, 20)
             self.platforms.add(p)

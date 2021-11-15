@@ -1,4 +1,4 @@
-
+import pygame as pg
 # game options/settings
 TITLE = "JUMP!"
 WIDTH = 1280
@@ -22,7 +22,7 @@ PLATFORM_LIST = [(0, HEIGHT - 40, WIDTH, 40),
                  (400, 300, 100, 20),
                  (800, 350, 150, 20),
                  (1200, 30, 200, 20),
-                 ]
+                 (640,50, 300, 20)]
 
 
 
