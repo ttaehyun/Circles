@@ -54,7 +54,7 @@ class Player2(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.game = game
         self.image = pg.Surface((30, 40))
-        self.image.fill(BLUE)
+        self.image.fill(RanDom_COLOR)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH/2, HEIGHT/2)
         self.pos = vec(WIDTH/2+200, HEIGHT/2+100)

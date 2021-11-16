@@ -1,3 +1,5 @@
+import random
+
 import pygame as pg
 # game options/settings
 TITLE = "JUMP!"
@@ -36,3 +38,4 @@ YELLOW = (255, 255, 0)
 LIGHTBLUE = (0, 155, 155)
 orange = (255,127,0)
 BGCOLOR = LIGHTBLUE
+RanDom_COLOR = (random.randrange(0, 255), random.randrange(0, 255), random.randrange(0, 255))
