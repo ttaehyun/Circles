@@ -53,8 +53,9 @@ class Player2(pg.sprite.Sprite):
     def __init__(self, game):
         pg.sprite.Sprite.__init__(self)
         self.game = game
-        self.image = pg.Surface((30, 40))
-        self.image.fill(RanDom_COLOR)
+        self.image = pg.image.load("C:/Users/태현/Desktop/2학기파이겜/A.png")
+        self.image = pg.transform.scale(self.image, (70,70))
+        # self.image.fill(RanDom_COLOR)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH/2, HEIGHT/2)
         self.pos = vec(WIDTH/2+200, HEIGHT/2+100)
